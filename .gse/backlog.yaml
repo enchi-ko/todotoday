@@ -13,10 +13,10 @@ items:
     - docs/sprints/sprint-03/compound.md
   acceptance_criteria: Importing a backup asks for confirmation before replacing the
     current list.
-  status: review
+  status: reviewed
   requires_review: true
   delivered_at: null
-  completed_at: null
+  completed_at: '2026-11-26T17:02:35+01:00'
   origin: ad-hoc
   origin_ref: docs/sprints/sprint-03/compound.md
   git:
@@ -35,4 +35,4 @@ items:
     code_coverage: null
     summary: 17/17 regression tests passed (TCP-004)
   created: '2026-11-26T16:55:05+01:00'
-  updated: '2026-11-26T17:01:11+01:00'
+  updated: '2026-11-26T17:02:35+01:00'
