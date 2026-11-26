@@ -32,9 +32,19 @@ workflow_observations:
   severity: info
   timestamp: '2026-11-26T16:27:33+01:00'
   sprint: 1
-  summarized: false
-last_activity: /gse:deliver
-last_activity_timestamp: '2026-11-26T16:27:33+01:00'
+  summarized: true
+- axis: sprint_velocity
+  sprint: 1
+  summarized: true
+  timestamp: '2026-11-26T16:31:01+01:00'
+  summary_text: Sprint 1 delivered 8/8 planned points in one session; no stalls, no
+    rework.
+  key_observations:
+  - sprint_close velocity note
+  severity_trend: stable
+  count_raw_entries: 1
+last_activity: /gse:compound
+last_activity_timestamp: '2026-11-26T16:31:01+01:00'
 activity_history:
 - activity: /gse:reqs
   completed_at: '2026-11-26T16:13:51+01:00'
@@ -49,6 +59,11 @@ activity_history:
   sprint: 1
   notes: Merged to main, tagged v0.1.0, branches cleaned, release notes + plan snapshot
     written
+- activity: /gse:compound
+  completed_at: '2026-11-26T16:31:01+01:00'
+  sprint: 1
+  notes: 3 axes capitalized; 4 methodology observations (3 themes); LRN-001; backlog
+    archived
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0
