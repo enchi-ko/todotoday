@@ -24,8 +24,8 @@ tasks:
   branch: gse/sprint-01/feat/edit-remove
 budget:
   total: 10
-  consumed: 0
-  remaining: 10
+  consumed: 8
+  remaining: 2
 workflow:
   expected:
   - plan
@@ -40,14 +40,16 @@ workflow:
     completed_at: '2026-11-26T16:13:51+01:00'
     notes: 5 functional + 1 usability NFR approved; OQ-001..005 resolved; DEC-001
       recorded
-  active: produce
-  pending:
-  - deliver
+  - activity: produce
+    completed_at: '2026-11-26T16:17:17+01:00'
+    notes: TASK-001..004 produced on one branch; TCP-001 13/13 passed
+  active: deliver
+  pending: []
   skipped: []
 coherence:
-  last_evaluated: '2026-11-26T16:13:51+01:00'
+  last_evaluated: '2026-11-26T16:17:17+01:00'
   scope_changes: []
   alerts: []
 risks: []
 created: '2026-11-26T16:08:55+01:00'
-updated: '2026-11-26T16:13:51+01:00'
+updated: '2026-11-26T16:17:17+01:00'

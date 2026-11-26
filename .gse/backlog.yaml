@@ -13,7 +13,7 @@ items:
     - INT-001
   acceptance_criteria: A person can add a task and immediately see it appear in the
     list.
-  status: planned
+  status: review
   requires_review: true
   delivered_at: null
   completed_at: null
@@ -21,21 +21,21 @@ items:
   origin_ref: INT-001
   git:
     branch: gse/sprint-01/feat/add-task
-    branch_status: planned
+    branch_status: active
     worktree: null
     worktree_status: null
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
   test_evidence:
-    status: absent
-    campaign_ref: null
-    timestamp: null
-    pass_rate: null
+    status: pass
+    campaign_ref: docs/sprints/sprint-01/test-reports/campaign-001.md
+    timestamp: '2026-11-26T16:17:17+01:00'
+    pass_rate: 100
     code_coverage: null
-    summary: null
+    summary: 13/13 tests passed (TCP-001)
   created: '2026-11-26T16:05:00+01:00'
-  updated: '2026-11-26T16:08:55+01:00'
+  updated: '2026-11-26T16:17:17+01:00'
 - id: TASK-002
   title: Mark a task as done
   description: A person can mark a task as completed, and its done state is visible
@@ -50,7 +50,7 @@ items:
     - INT-001
   acceptance_criteria: A person can mark a task done and see its done state reflected
     in the list.
-  status: planned
+  status: review
   requires_review: true
   delivered_at: null
   completed_at: null
@@ -58,21 +58,21 @@ items:
   origin_ref: INT-001
   git:
     branch: gse/sprint-01/feat/mark-done
-    branch_status: planned
+    branch_status: active
     worktree: null
     worktree_status: null
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
   test_evidence:
-    status: absent
-    campaign_ref: null
-    timestamp: null
-    pass_rate: null
+    status: pass
+    campaign_ref: docs/sprints/sprint-01/test-reports/campaign-001.md
+    timestamp: '2026-11-26T16:17:17+01:00'
+    pass_rate: 100
     code_coverage: null
-    summary: null
+    summary: 13/13 tests passed (TCP-001)
   created: '2026-11-26T16:05:00+01:00'
-  updated: '2026-11-26T16:08:55+01:00'
+  updated: '2026-11-26T16:17:17+01:00'
 - id: TASK-003
   title: Share the same list between two people (no login)
   description: Both people open the same list and see the same tasks, without any
@@ -87,7 +87,7 @@ items:
     - INT-001
   acceptance_criteria: Two people can open the list and see the same tasks without
     signing in.
-  status: planned
+  status: review
   requires_review: true
   delivered_at: null
   completed_at: null
@@ -95,21 +95,21 @@ items:
   origin_ref: INT-001
   git:
     branch: gse/sprint-01/feat/shared-list
-    branch_status: planned
+    branch_status: active
     worktree: null
     worktree_status: null
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
   test_evidence:
-    status: absent
-    campaign_ref: null
-    timestamp: null
-    pass_rate: null
+    status: pass
+    campaign_ref: docs/sprints/sprint-01/test-reports/campaign-001.md
+    timestamp: '2026-11-26T16:17:17+01:00'
+    pass_rate: 100
     code_coverage: null
-    summary: null
+    summary: 13/13 tests passed (TCP-001)
   created: '2026-11-26T16:05:00+01:00'
-  updated: '2026-11-26T16:08:55+01:00'
+  updated: '2026-11-26T16:17:17+01:00'
 - id: TASK-004
   title: Edit or remove a task
   description: A person can correct a task's title or delete a task that is no longer
@@ -124,7 +124,7 @@ items:
     - INT-001
   acceptance_criteria: A person can change a task's title or delete it, and the change
     is visible in the list.
-  status: planned
+  status: review
   requires_review: true
   delivered_at: null
   completed_at: null
@@ -132,18 +132,18 @@ items:
   origin_ref: INT-001
   git:
     branch: gse/sprint-01/feat/edit-remove
-    branch_status: planned
+    branch_status: active
     worktree: null
     worktree_status: null
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
   test_evidence:
-    status: absent
-    campaign_ref: null
-    timestamp: null
-    pass_rate: null
+    status: pass
+    campaign_ref: docs/sprints/sprint-01/test-reports/campaign-001.md
+    timestamp: '2026-11-26T16:17:17+01:00'
+    pass_rate: 100
     code_coverage: null
-    summary: null
+    summary: 13/13 tests passed (TCP-001)
   created: '2026-11-26T16:05:00+01:00'
-  updated: '2026-11-26T16:08:55+01:00'
+  updated: '2026-11-26T16:17:17+01:00'
