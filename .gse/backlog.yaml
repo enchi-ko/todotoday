@@ -1,1 +1,37 @@
-items: []
+items:
+- id: TASK-011
+  title: Publish the app online (GitHub Pages guide + .nojekyll)
+  description: Add a beginner-friendly GitHub Pages publishing guide (DEPLOY.md) and
+    a .nojekyll marker so the static app can be hosted for free.
+  artefact_type: doc
+  sprint: null
+  priority: should
+  complexity: 0
+  traces:
+    implements: []
+    derives_from: []
+  acceptance_criteria: A DEPLOY.md guide explains how to publish the app on GitHub
+    Pages; .nojekyll present.
+  status: delivered
+  requires_review: false
+  delivered_at: '2026-11-26T17:07:21+01:00'
+  completed_at: '2026-11-26T17:07:21+01:00'
+  origin: ad-hoc
+  origin_ref: quick
+  git:
+    branch: gse/quick/publish-github-pages
+    branch_status: active
+    worktree: null
+    worktree_status: null
+    last_commit: '2026-11-26T17:07:21+01:00'
+    uncommitted_changes: 0
+  github_issue: null
+  test_evidence:
+    status: pass
+    campaign_ref: null
+    timestamp: '2026-11-26T17:07:21+01:00'
+    pass_rate: 100
+    code_coverage: null
+    summary: 17/17 green (no code change)
+  created: '2026-11-26T17:07:21+01:00'
+  updated: '2026-11-26T17:07:21+01:00'
