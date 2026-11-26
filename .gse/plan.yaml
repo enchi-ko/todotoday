@@ -11,8 +11,8 @@ tasks:
   branch: gse/sprint-04/feat/import-confirm
 budget:
   total: 10
-  consumed: 0
-  remaining: 10
+  consumed: 1
+  remaining: 9
 workflow:
   expected:
   - plan
@@ -26,14 +26,16 @@ workflow:
   - activity: reqs
     completed_at: '2026-11-26T17:00:45+01:00'
     notes: Sprint 4 requirement approved (REQ-014); confirm = OK/Cancel
-  active: produce
-  pending:
-  - deliver
+  - activity: produce
+    completed_at: '2026-11-26T17:01:11+01:00'
+    notes: TASK-010 produced (import confirmation); TCP-004 17/17 (no regressions)
+  active: deliver
+  pending: []
   skipped: []
 coherence:
-  last_evaluated: '2026-11-26T17:00:45+01:00'
+  last_evaluated: '2026-11-26T17:01:11+01:00'
   scope_changes: []
   alerts: []
 risks: []
 created: '2026-11-26T16:55:00+01:00'
-updated: '2026-11-26T17:00:45+01:00'
+updated: '2026-11-26T17:01:11+01:00'

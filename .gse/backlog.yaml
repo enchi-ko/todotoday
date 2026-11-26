@@ -13,7 +13,7 @@ items:
     - docs/sprints/sprint-03/compound.md
   acceptance_criteria: Importing a backup asks for confirmation before replacing the
     current list.
-  status: planned
+  status: review
   requires_review: true
   delivered_at: null
   completed_at: null
@@ -21,18 +21,18 @@ items:
   origin_ref: docs/sprints/sprint-03/compound.md
   git:
     branch: gse/sprint-04/feat/import-confirm
-    branch_status: planned
+    branch_status: active
     worktree: null
     worktree_status: null
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
   test_evidence:
-    status: absent
-    campaign_ref: null
-    timestamp: null
-    pass_rate: null
+    status: pass
+    campaign_ref: docs/sprints/sprint-04/test-reports/campaign-004.md
+    timestamp: '2026-11-26T17:01:11+01:00'
+    pass_rate: 100
     code_coverage: null
-    summary: null
+    summary: 17/17 regression tests passed (TCP-004)
   created: '2026-11-26T16:55:05+01:00'
-  updated: '2026-11-26T16:59:53+01:00'
+  updated: '2026-11-26T17:01:11+01:00'
