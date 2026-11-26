@@ -4,7 +4,7 @@ items:
   description: Refactor app.py to a pure app-factory entry point so importing the
     module for tests does not create tasks.db.
   artefact_type: code
-  sprint: null
+  sprint: 2
   priority: could
   complexity: 1
   traces:
@@ -13,15 +13,15 @@ items:
     - docs/sprints/sprint-01/compound.md
   acceptance_criteria: Importing the app for tests creates no database file; tests
     still pass.
-  status: open
+  status: planned
   requires_review: true
   delivered_at: null
   completed_at: null
   origin: ad-hoc
   origin_ref: docs/sprints/sprint-01/compound.md
   git:
-    branch: null
-    branch_status: null
+    branch: gse/sprint-02/chore/import-safe
+    branch_status: planned
     worktree: null
     worktree_status: null
     last_commit: null
@@ -35,13 +35,13 @@ items:
     code_coverage: null
     summary: null
   created: '2026-11-26T16:31:40+01:00'
-  updated: '2026-11-26T16:31:40+01:00'
+  updated: '2026-11-26T16:35:43+01:00'
 - id: TASK-006
   title: Host the shared list online so both people can reach it
   description: Deploy the app so the two users can reach it without being on the same
     local network.
   artefact_type: code
-  sprint: null
+  sprint: 2
   priority: should
   complexity: 3
   traces:
@@ -50,15 +50,15 @@ items:
     - docs/sprints/sprint-01/compound.md
   acceptance_criteria: Both users can open the list from their own devices over the
     internet.
-  status: open
+  status: planned
   requires_review: true
   delivered_at: null
   completed_at: null
   origin: ad-hoc
   origin_ref: docs/sprints/sprint-01/compound.md
   git:
-    branch: null
-    branch_status: null
+    branch: gse/sprint-02/feat/hosting
+    branch_status: planned
     worktree: null
     worktree_status: null
     last_commit: null
@@ -72,4 +72,4 @@ items:
     code_coverage: null
     summary: null
   created: '2026-11-26T16:31:40+01:00'
-  updated: '2026-11-26T16:31:40+01:00'
+  updated: '2026-11-26T16:35:43+01:00'

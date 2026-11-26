@@ -1,60 +1,47 @@
+# GSE-One Sprint Plan
+# Created by /gse:plan --strategic. Maintained by orchestrator throughout sprint.
+
 version: 1
-id: PLN-001
-sprint: 1
+id: PLN-002
+sprint: 2
 mode: lightweight
-status: completed
-goal: 'A minimal shared to-do list for two people: add tasks, mark them done, share
-  the same list without logins, and edit/remove tasks.'
+status: active
+goal: "Host the shared to-do list online so both people can reach it from their own devices, and make the app import-safe."
+
 tasks:
-- id: TASK-001
-  order: 1
-  complexity: 3
-  branch: gse/sprint-01/feat/add-task
-- id: TASK-002
-  order: 2
-  complexity: 1
-  branch: gse/sprint-01/feat/mark-done
-- id: TASK-003
-  order: 3
-  complexity: 3
-  branch: gse/sprint-01/feat/shared-list
-- id: TASK-004
-  order: 4
-  complexity: 1
-  branch: gse/sprint-01/feat/edit-remove
+  - id: TASK-005
+    order: 1
+    complexity: 1
+    branch: gse/sprint-02/chore/import-safe
+  - id: TASK-006
+    order: 2
+    complexity: 3
+    branch: gse/sprint-02/feat/hosting
+
 budget:
   total: 10
-  consumed: 8
-  remaining: 2
+  consumed: 0
+  remaining: 10
+
 workflow:
-  expected:
-  - plan
-  - reqs
-  - produce
-  - deliver
+  expected: [plan, reqs, produce, deliver]
   completed:
-  - activity: plan
-    completed_at: '2026-11-26T16:08:55+01:00'
-    notes: 'Sprint 1 planned: 4 tasks, 8/10 points, mode=lightweight'
-  - activity: reqs
-    completed_at: '2026-11-26T16:13:51+01:00'
-    notes: 5 functional + 1 usability NFR approved; OQ-001..005 resolved; DEC-001
-      recorded
-  - activity: produce
-    completed_at: '2026-11-26T16:17:17+01:00'
-    notes: TASK-001..004 produced on one branch; TCP-001 13/13 passed
-  active: deliver
-  pending: []
+    - activity: plan
+      completed_at: "2026-11-26T16:40:00+01:00"
+      notes: "Sprint 2 planned: 2 tasks, 4/10 points; previous sprint velocity 8/8 (100%)"
+  active: reqs
+  pending: [produce, deliver]
   skipped: []
+
 coherence:
-  last_evaluated: '2026-11-26T16:17:17+01:00'
-  scope_changes:
-  - timestamp: '2026-11-26T16:20:26+01:00'
-    trigger: produce
-    description: 'Four planned per-goal feature branches consolidated into one (gse/sprint-01/feat/add-task);
-      one commit per TASK. Reason: one small cohesive app.'
-    budget_impact: 0 pts
+  last_evaluated: "2026-11-26T16:40:00+01:00"
+  scope_changes: []
   alerts: []
-risks: []
-created: '2026-11-26T16:08:55+01:00'
-updated: '2026-11-26T16:27:24+01:00'
+
+risks:
+  - description: "Hosting requires a server and may incur cost"
+    likelihood: medium
+    mitigation: "Confirm infrastructure and cost at the deploy Gate before provisioning"
+
+created: "2026-11-26T16:40:00+01:00"
+updated: "2026-11-26T16:40:00+01:00"
