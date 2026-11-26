@@ -95,3 +95,37 @@ def test_two_servers_share_one_storage(tmp_path):
     app_a.test_client().post("/add", data={"title": "From A"}, follow_redirects=True)
     resp = app_b.test_client().get("/")
     assert b"From A" in resp.data
+
+
+def test_edit_task_title(client):
+    # REQ-005 criterion 1: editing a title shows the change.
+    client.post("/add", data={"title": "Buy milk"}, follow_redirects=True)
+    client.post("/edit/1", data={"title": "Buy oat milk"}, follow_redirects=True)
+    resp = client.get("/")
+    assert b"Buy oat milk" in resp.data
+    assert b"Buy milk" not in resp.data
+
+
+def test_edit_ignores_empty_title(client):
+    # REQ-005: an empty edit keeps the previous title.
+    client.post("/add", data={"title": "Buy milk"}, follow_redirects=True)
+    client.post("/edit/1", data={"title": "   "}, follow_redirects=True)
+    resp = client.get("/")
+    assert b"Buy milk" in resp.data
+
+
+def test_delete_task(client):
+    # REQ-005 criterion 2: deleting removes the task.
+    client.post("/add", data={"title": "Buy milk"}, follow_redirects=True)
+    client.post("/delete/1", follow_redirects=True)
+    resp = client.get("/")
+    assert b"Buy milk" not in resp.data
+    assert b"No tasks yet" in resp.data
+
+
+def test_edits_are_shared(client):
+    # REQ-002/REQ-004: edits are shared too.
+    other = client.application.test_client()
+    client.post("/add", data={"title": "Buy milk"}, follow_redirects=True)
+    client.post("/edit/1", data={"title": "Buy oat milk"}, follow_redirects=True)
+    assert b"Buy oat milk" in other.get("/").data

@@ -76,6 +76,22 @@ def create_app(db_path: str | None = None) -> Flask:
         db.commit()
         return redirect(url_for("index"))
 
+    @app.route("/edit/<int:task_id>", methods=["POST"])
+    def edit(task_id: int):
+        title = (request.form.get("title") or "").strip()
+        if title:
+            db = get_db()
+            db.execute("UPDATE tasks SET title = ? WHERE id = ?", (title, task_id))
+            db.commit()
+        return redirect(url_for("index"))
+
+    @app.route("/delete/<int:task_id>", methods=["POST"])
+    def delete(task_id: int):
+        db = get_db()
+        db.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
+        db.commit()
+        return redirect(url_for("index"))
+
     return app
 
 
