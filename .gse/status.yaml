@@ -63,9 +63,13 @@ workflow_observations:
   - record-only commit guardrail recurring
   severity_trend: stable
   count_raw_entries: 1
-last_activity: /gse:integrate
-last_activity_timestamp: '2026-11-26T16:48:13+01:00'
-activity_history: []
+last_activity: /gse:reqs
+last_activity_timestamp: '2026-11-26T16:49:35+01:00'
+activity_history:
+- activity: /gse:reqs
+  completed_at: '2026-11-26T16:49:35+01:00'
+  sprint: 3
+  notes: Requirements approved (REQ-011..013)
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0

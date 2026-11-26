@@ -1,44 +1,45 @@
-# GSE-One Sprint Plan
-# Created by /gse:plan --strategic. Maintained by orchestrator throughout sprint.
-
 version: 1
 id: PLN-003
 sprint: 3
 mode: lightweight
 status: active
-goal: "Add export/import so the user can back up their list, and a small save confirmation when editing a task."
-
+goal: Add export/import so the user can back up their list, and a small save confirmation
+  when editing a task.
 tasks:
-  - id: TASK-008
-    order: 1
-    complexity: 2
-    branch: gse/sprint-03/feat/backup
-  - id: TASK-009
-    order: 2
-    complexity: 1
-    branch: gse/sprint-03/feat/save-hint
-
+- id: TASK-008
+  order: 1
+  complexity: 2
+  branch: gse/sprint-03/feat/backup
+- id: TASK-009
+  order: 2
+  complexity: 1
+  branch: gse/sprint-03/feat/save-hint
 budget:
   total: 10
   consumed: 0
   remaining: 10
-
 workflow:
-  expected: [plan, reqs, produce, deliver]
+  expected:
+  - plan
+  - reqs
+  - produce
+  - deliver
   completed:
-    - activity: plan
-      completed_at: "2026-11-26T16:45:00+01:00"
-      notes: "Sprint 3 planned: 2 tasks, 3/10 points; previous sprint velocity 3/3 (100%); obsolete TASK-005 removed"
-  active: reqs
-  pending: [produce, deliver]
+  - activity: plan
+    completed_at: '2026-11-26T16:45:00+01:00'
+    notes: 'Sprint 3 planned: 2 tasks, 3/10 points; previous sprint velocity 3/3 (100%);
+      obsolete TASK-005 removed'
+  - activity: reqs
+    completed_at: '2026-11-26T16:49:35+01:00'
+    notes: Sprint 3 requirements approved (REQ-011..013); import = replace
+  active: produce
+  pending:
+  - deliver
   skipped: []
-
 coherence:
-  last_evaluated: "2026-11-26T16:45:00+01:00"
+  last_evaluated: '2026-11-26T16:49:35+01:00'
   scope_changes: []
   alerts: []
-
 risks: []
-
-created: "2026-11-26T16:45:00+01:00"
-updated: "2026-11-26T16:45:00+01:00"
+created: '2026-11-26T16:45:00+01:00'
+updated: '2026-11-26T16:49:35+01:00'
