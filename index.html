@@ -135,13 +135,20 @@
         if (!file) return;
         var reader = new FileReader();
         reader.onload = function () {
+          var next;
           try {
-            tasks = Todo.importTasks(String(reader.result));
-            persist();
-            showHint("Imported");
+            next = Todo.importTasks(String(reader.result));
           } catch (err) {
             showHint("Could not read that file");
+            return;
           }
+          // REQ-014: confirm before replacing the current list.
+          if (!window.confirm("This will replace your current list. Continue?")) {
+            return;
+          }
+          tasks = next;
+          persist();
+          showHint("Imported");
         };
         reader.readAsText(file);
         fileInput.value = "";
