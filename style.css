@@ -149,3 +149,35 @@ h1 {
   font-style: italic;
   text-align: center;
 }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.toolbar button {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hint {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.hint.show { opacity: 1; }

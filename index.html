@@ -18,12 +18,19 @@
 
     <ul id="tasks" class="tasks"></ul>
     <p id="empty" class="empty">No tasks yet. Add one above.</p>
+
+    <div class="toolbar">
+      <button id="export" type="button">Export backup</button>
+      <button id="import" type="button">Import backup</button>
+      <input id="file" type="file" accept="application/json,.json" hidden>
+      <span id="hint" class="hint" role="status" aria-live="polite"></span>
+    </div>
   </main>
 
   <!-- Task logic (pure, also tested in Node) -->
   <script src="todo.js"></script>
 
-  <!-- Page glue: render + save to the browser -->
+  <!-- Page glue: render, save to the browser, export/import -->
   <script>
     (function () {
       "use strict";
@@ -34,6 +41,17 @@
       var emptyEl = document.getElementById("empty");
       var form = document.getElementById("add-form");
       var input = document.getElementById("new-title");
+      var hintEl = document.getElementById("hint");
+      var hintTimer = null;
+
+      function showHint(message) {
+        hintEl.textContent = message;
+        hintEl.classList.add("show");
+        if (hintTimer) clearTimeout(hintTimer);
+        hintTimer = setTimeout(function () {
+          hintEl.classList.remove("show");
+        }, 1500);
+      }
 
       function persist() {
         Todo.save(storage, tasks);
@@ -65,6 +83,7 @@
           title.addEventListener("change", function () {
             tasks = Todo.editTask(tasks, task.id, title.value);
             persist();
+            showHint("Saved");
           });
 
           var remove = document.createElement("button");
@@ -90,6 +109,42 @@
         tasks = Todo.addTask(tasks, input.value);
         input.value = "";
         persist();
+      });
+
+      // --- Export ---
+      document.getElementById("export").addEventListener("click", function () {
+        var blob = new Blob([Todo.exportTasks(tasks)], { type: "application/json" });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = "todotoday-backup.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showHint("Exported");
+      });
+
+      // --- Import (replaces the current list) ---
+      var fileInput = document.getElementById("file");
+      document.getElementById("import").addEventListener("click", function () {
+        fileInput.click();
+      });
+      fileInput.addEventListener("change", function () {
+        var file = fileInput.files && fileInput.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function () {
+          try {
+            tasks = Todo.importTasks(String(reader.result));
+            persist();
+            showHint("Imported");
+          } catch (err) {
+            showHint("Could not read that file");
+          }
+        };
+        reader.readAsText(file);
+        fileInput.value = "";
       });
 
       render();
