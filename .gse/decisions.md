@@ -19,3 +19,18 @@
 - **Traces:** derives_from: [OQ-001, OQ-002]
 
 <!-- Begin DEC entries below this line. Entries are appended chronologically. -->
+
+### DEC-002 — Scope change: personal list only, simplified to a browser-only page
+
+- **Sprint:** 2
+- **Type:** scope-shaping
+- **Tier:** Gate
+- **Date:** 2026-11-26
+- **Decision:** The project scope changes from a list shared between two people to a **personal, single-user** to-do list, and the app is simplified to a **single browser-only page** (tasks saved in the browser; no server, no hosting).
+- **Context:** At the start of sprint 2 the user decided the two-person sharing is no longer wanted ("we can remove the share option"). Sharing was the sole reason for the server-backed architecture (DEC-001) and for sprint 2's hosting goal.
+- **Options considered:** (1) Simplify to a browser-only page (chosen); (2) keep the current server app as-is.
+- **Excluded alternative:** Keeping the server app — excluded because a personal list gains nothing from a server, and a browser-only page needs no install, no hosting and no recurring cost.
+- **Rationale:** The smallest thing that satisfies "personal to-do list". It removes the hosting cost/risk flagged at PLAN (PLN-002 risks) and is friendlier for everyday use (just open the file).
+- **Consequences:** Now — the Flask app is replaced by one HTML file; REQ-002/REQ-004 (sharing) are retired. 3 months — data lives in the browser, per device; no cross-device sync (acceptable for personal use; a backup/export option may be worth adding later). 1 year — if the user later wants remote or multi-device access, revisit hosting (a future sprint). Reversible: the browser page is small and self-contained.
+- **Traces:** derives_from: [INT-001, DEC-001]
+

@@ -96,3 +96,16 @@ _Structured ambiguities auto-consumed by the **activity-entry scan** (spec P6). 
   - answered_by: agent
   - confidence: High
   - traces: [REQ-003]
+
+## Revision — 2026-11-26 (Sprint 2)
+
+The user revised the scope: the two-person sharing is **removed**. The project is
+now a **personal, single-user** to-do list, and the app is simplified to a
+**single browser-only page** (no server, no hosting).
+
+- **What changed:** "shared with another person" → personal only; server-backed app → browser-only page.
+- **What this retires:** REQ-002 and REQ-004 (sharing requirements, sprint 1 — frozen); the sprint 2 hosting goal.
+- **Recorded as:** DEC-002 (scope-shaping, Gate).
+- **Unchanged:** add / view / mark-done / edit / remove a task; "easy to use".
+- **New boundary:** data lives in the browser, per device (no cross-device sync).
+

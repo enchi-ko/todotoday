@@ -1,47 +1,46 @@
-# GSE-One Sprint Plan
-# Created by /gse:plan --strategic. Maintained by orchestrator throughout sprint.
-
 version: 1
 id: PLN-002
 sprint: 2
 mode: lightweight
 status: active
-goal: "Host the shared to-do list online so both people can reach it from their own devices, and make the app import-safe."
-
+goal: Rebuild the to-do list as a single browser page for personal use (no server,
+  no hosting).
 tasks:
-  - id: TASK-005
-    order: 1
-    complexity: 1
-    branch: gse/sprint-02/chore/import-safe
-  - id: TASK-006
-    order: 2
-    complexity: 3
-    branch: gse/sprint-02/feat/hosting
-
+- id: TASK-007
+  order: 1
+  complexity: 3
+  branch: gse/sprint-02/feat/browser-app
 budget:
   total: 10
   consumed: 0
   remaining: 10
-
 workflow:
-  expected: [plan, reqs, produce, deliver]
+  expected:
+  - plan
+  - reqs
+  - produce
+  - deliver
   completed:
-    - activity: plan
-      completed_at: "2026-11-26T16:40:00+01:00"
-      notes: "Sprint 2 planned: 2 tasks, 4/10 points; previous sprint velocity 8/8 (100%)"
+  - activity: plan
+    completed_at: '2026-11-26T16:40:00+01:00'
+    notes: 'Sprint 2 planned: 2 tasks, 4/10 points; previous sprint velocity 8/8 (100%)'
   active: reqs
-  pending: [produce, deliver]
+  pending:
+  - produce
+  - deliver
   skipped: []
-
 coherence:
-  last_evaluated: "2026-11-26T16:40:00+01:00"
-  scope_changes: []
+  last_evaluated: '2026-11-26T16:38:04+01:00'
+  scope_changes:
+  - timestamp: '2026-11-26T16:38:04+01:00'
+    trigger: tactical-replan
+    description: 'Scope change (DEC-002): personal-only, browser-only. Dropped hosting
+      (TASK-006 -> pool) and import-safe cleanup (TASK-005 -> deferred); added TASK-007.'
+    budget_impact: -1 pt (from 4 to 3)
   alerts: []
-
 risks:
-  - description: "Hosting requires a server and may incur cost"
-    likelihood: medium
-    mitigation: "Confirm infrastructure and cost at the deploy Gate before provisioning"
-
-created: "2026-11-26T16:40:00+01:00"
-updated: "2026-11-26T16:40:00+01:00"
+- description: Data lives in the browser only — clearing browser data loses the list
+  likelihood: medium
+  mitigation: Consider an export/backup option in a future sprint
+created: '2026-11-26T16:40:00+01:00'
+updated: '2026-11-26T16:38:04+01:00'
