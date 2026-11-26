@@ -1,0 +1,171 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --ink: #1c2430;
+  --muted: #8b95a5;
+  --accent: #3b82f6;
+  --done: #9aa4b2;
+  --border: #e6e9ef;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 32rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 1rem;
+}
+
+.add {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.add input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--card);
+}
+
+.add input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.add button {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.add button:hover { filter: brightness(0.95); }
+
+.tasks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.task:last-child { border-bottom: none; }
+
+.toggle { display: flex; margin: 0; }
+
+.check {
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 1rem;
+  line-height: 1;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.task.done .check {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.edit {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.edit input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.25rem 0.35rem;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+}
+
+.edit input:hover { border-color: var(--border); }
+
+.edit input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.save {
+  display: none;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.edit:focus-within .save { display: inline-block; }
+
+.delete { display: flex; margin: 0; }
+
+.remove {
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 0.9rem;
+  line-height: 1;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.remove:hover { background: #fde8e8; color: #c0392b; }
+
+.task.done .edit input {
+  text-decoration: line-through;
+  color: var(--done);
+}
+
+.empty {
+  padding: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}

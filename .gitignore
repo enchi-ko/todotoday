@@ -9,3 +9,6 @@ docs/dashboard.html
 __pycache__/
 
 # Project
+.venv/
+tasks.db
+.pytest_cache/

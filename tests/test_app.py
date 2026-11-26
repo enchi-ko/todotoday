@@ -1,0 +1,131 @@
+"""Tests for TODOTODAY — Goal 1: add a task and see it in the shared list.
+
+Covers REQ-001 (add a task) and the shared-storage behaviour behind REQ-002
+(both users see the same tasks).
+"""
+
+import os
+import tempfile
+
+import pytest
+
+from app import create_app
+
+
+@pytest.fixture
+def client():
+    fd, path = tempfile.mkstemp(suffix=".db")
+    os.close(fd)
+    try:
+        app = create_app(db_path=path)
+        app.config.update(TESTING=True)
+        with app.test_client() as c:
+            yield c
+    finally:
+        os.unlink(path)
+
+
+def test_home_page_loads(client):
+    resp = client.get("/")
+    assert resp.status_code == 200
+    assert b"TODOTODAY" in resp.data
+
+
+def test_empty_list_shows_placeholder(client):
+    resp = client.get("/")
+    assert b"No tasks yet" in resp.data
+
+
+def test_add_task_appears_in_list(client):
+    # REQ-001 / REQ-002: a task I add shows up in the list.
+    client.post("/add", data={"title": "Buy milk"}, follow_redirects=True)
+    resp = client.get("/")
+    assert b"Buy milk" in resp.data
+
+
+def test_empty_title_is_not_added(client):
+    # REQ-001 criterion 2: an empty title adds nothing.
+    client.post("/add", data={"title": "   "}, follow_redirects=True)
+    resp = client.get("/")
+    assert b"No tasks yet" in resp.data
+
+
+def test_tasks_are_shared_across_sessions(client):
+    # REQ-002 / REQ-004: tasks live in one shared place, not per-browser.
+    # Two independent clients against the same server see the same tasks.
+    other = client.application.test_client()
+    client.post("/add", data={"title": "Shared task"}, follow_redirects=True)
+    resp = other.get("/")
+    assert b"Shared task" in resp.data
+
+
+def test_mark_task_done(client):
+    # REQ-003 criterion 1: marking a task done shows it as done.
+    client.post("/add", data={"title": "Walk dog"}, follow_redirects=True)
+    client.post("/toggle/1", follow_redirects=True)
+    resp = client.get("/")
+    assert b'class="task done"' in resp.data
+
+
+def test_unmark_task_done(client):
+    # REQ-003 criterion 2: marking a done task again shows it as not done.
+    client.post("/add", data={"title": "Walk dog"}, follow_redirects=True)
+    client.post("/toggle/1", follow_redirects=True)  # -> done
+    client.post("/toggle/1", follow_redirects=True)  # -> not done
+    resp = client.get("/")
+    assert b'class="task done"' not in resp.data
+
+
+def test_done_state_is_shared(client):
+    # REQ-002/REQ-004: the done state is shared too, not per-browser.
+    other = client.application.test_client()
+    client.post("/add", data={"title": "Walk dog"}, follow_redirects=True)
+    client.post("/toggle/1", follow_redirects=True)
+    resp = other.get("/")
+    assert b'class="task done"' in resp.data
+
+
+def test_two_servers_share_one_storage(tmp_path):
+    # REQ-004: sharing comes from one shared store, not from memory.
+    # Two separate app instances pointed at the same database file see the
+    # same tasks — exactly what happens when both people reach one server.
+    db = str(tmp_path / "shared.db")
+    app_a = create_app(db_path=db)
+    app_b = create_app(db_path=db)
+    app_a.test_client().post("/add", data={"title": "From A"}, follow_redirects=True)
+    resp = app_b.test_client().get("/")
+    assert b"From A" in resp.data
+
+
+def test_edit_task_title(client):
+    # REQ-005 criterion 1: editing a title shows the change.
+    client.post("/add", data={"title": "Buy milk"}, follow_redirects=True)
+    client.post("/edit/1", data={"title": "Buy oat milk"}, follow_redirects=True)
+    resp = client.get("/")
+    assert b"Buy oat milk" in resp.data
+    assert b"Buy milk" not in resp.data
+
+
+def test_edit_ignores_empty_title(client):
+    # REQ-005: an empty edit keeps the previous title.
+    client.post("/add", data={"title": "Buy milk"}, follow_redirects=True)
+    client.post("/edit/1", data={"title": "   "}, follow_redirects=True)
+    resp = client.get("/")
+    assert b"Buy milk" in resp.data
+
+
+def test_delete_task(client):
+    # REQ-005 criterion 2: deleting removes the task.
+    client.post("/add", data={"title": "Buy milk"}, follow_redirects=True)
+    client.post("/delete/1", follow_redirects=True)
+    resp = client.get("/")
+    assert b"Buy milk" not in resp.data
+    assert b"No tasks yet" in resp.data
+
+
+def test_edits_are_shared(client):
+    # REQ-002/REQ-004: edits are shared too.
+    other = client.application.test_client()
+    client.post("/add", data={"title": "Buy milk"}, follow_redirects=True)
+    client.post("/edit/1", data={"title": "Buy oat milk"}, follow_redirects=True)
+    assert b"Buy oat milk" in other.get("/").data
