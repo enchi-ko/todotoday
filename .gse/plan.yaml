@@ -1,52 +1,44 @@
+# GSE-One Sprint Plan
+# Created by /gse:plan --strategic. Maintained by orchestrator throughout sprint.
+
 version: 1
-id: PLN-002
-sprint: 2
+id: PLN-003
+sprint: 3
 mode: lightweight
-status: completed
-goal: Rebuild the to-do list as a single browser page for personal use (no server,
-  no hosting).
+status: active
+goal: "Add export/import so the user can back up their list, and a small save confirmation when editing a task."
+
 tasks:
-- id: TASK-007
-  order: 1
-  complexity: 3
-  branch: gse/sprint-02/feat/browser-app
+  - id: TASK-008
+    order: 1
+    complexity: 2
+    branch: gse/sprint-03/feat/backup
+  - id: TASK-009
+    order: 2
+    complexity: 1
+    branch: gse/sprint-03/feat/save-hint
+
 budget:
   total: 10
-  consumed: 3
-  remaining: 7
+  consumed: 0
+  remaining: 10
+
 workflow:
-  expected:
-  - plan
-  - reqs
-  - produce
-  - deliver
+  expected: [plan, reqs, produce, deliver]
   completed:
-  - activity: plan
-    completed_at: '2026-11-26T16:40:00+01:00'
-    notes: 'Sprint 2 planned: 2 tasks, 4/10 points; previous sprint velocity 8/8 (100%)'
-  - activity: reqs
-    completed_at: '2026-11-26T16:40:03+01:00'
-    notes: Sprint 2 requirements approved (REQ-006..010, REQ-102); sharing REQs retired
-      (DEC-002)
-  - activity: produce
-    completed_at: '2026-11-26T16:41:15+01:00'
-    notes: 'TASK-007 produced: browser-only app (index.html + todo.js + style.css);
-      TCP-002 10/10 pass; server files removed'
-  active: deliver
-  pending: []
+    - activity: plan
+      completed_at: "2026-11-26T16:45:00+01:00"
+      notes: "Sprint 3 planned: 2 tasks, 3/10 points; previous sprint velocity 3/3 (100%); obsolete TASK-005 removed"
+  active: reqs
+  pending: [produce, deliver]
   skipped: []
+
 coherence:
-  last_evaluated: '2026-11-26T16:41:15+01:00'
-  scope_changes:
-  - timestamp: '2026-11-26T16:38:04+01:00'
-    trigger: tactical-replan
-    description: 'Scope change (DEC-002): personal-only, browser-only. Dropped hosting
-      (TASK-006 -> pool) and import-safe cleanup (TASK-005 -> deferred); added TASK-007.'
-    budget_impact: -1 pt (from 4 to 3)
+  last_evaluated: "2026-11-26T16:45:00+01:00"
+  scope_changes: []
   alerts: []
-risks:
-- description: Data lives in the browser only — clearing browser data loses the list
-  likelihood: medium
-  mitigation: Consider an export/backup option in a future sprint
-created: '2026-11-26T16:40:00+01:00'
-updated: '2026-11-26T16:46:59+01:00'
+
+risks: []
+
+created: "2026-11-26T16:45:00+01:00"
+updated: "2026-11-26T16:45:00+01:00"
