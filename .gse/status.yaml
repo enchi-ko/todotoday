@@ -1,6 +1,6 @@
 gse_version: 0.92.1
 current_sprint: 4
-current_phase: LC01
+current_phase: LC03
 session_paused: false
 pause_checkpoint: ''
 health:
@@ -14,7 +14,7 @@ health:
     traceability: 9
     git_hygiene: 10
     ai_integrity: 9
-  last_computed: '2026-11-26T16:51:28+01:00'
+  last_computed: '2026-11-26T17:03:19+01:00'
 consecutive_acceptances: 0
 pushback_dismissed: 0
 fix_attempts_on_current_symptom: 0
@@ -83,8 +83,17 @@ workflow_observations:
   - record-only commit friction recurring x3
   severity_trend: stable
   count_raw_entries: 1
-last_activity: /gse:produce
-last_activity_timestamp: '2026-11-26T17:01:11+01:00'
+- axis: sprint_velocity
+  moment: sprint_close
+  observation: Sprint 4 was a focused 1-point safety fix; delivered cleanly with no
+    regressions.
+  evidence: plan.yaml.budget (1/10); TCP-004
+  severity: info
+  timestamp: '2026-11-26T17:03:19+01:00'
+  sprint: 4
+  summarized: false
+last_activity: /gse:deliver
+last_activity_timestamp: '2026-11-26T17:03:19+01:00'
 activity_history:
 - activity: /gse:reqs
   completed_at: '2026-11-26T17:00:45+01:00'
@@ -94,6 +103,11 @@ activity_history:
   completed_at: '2026-11-26T17:01:11+01:00'
   sprint: 4
   notes: Produced TASK-010; TCP-004 17/17 pass
+- activity: /gse:deliver
+  completed_at: '2026-11-26T17:03:19+01:00'
+  sprint: 4
+  notes: Merged to main, tagged v0.4.0, branches cleaned, release notes + plan snapshot
+    written
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0

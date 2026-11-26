@@ -2,7 +2,7 @@ version: 1
 id: PLN-004
 sprint: 4
 mode: lightweight
-status: active
+status: completed
 goal: Confirm before import replaces the list, to prevent accidental data loss.
 tasks:
 - id: TASK-010
@@ -38,4 +38,4 @@ coherence:
   alerts: []
 risks: []
 created: '2026-11-26T16:55:00+01:00'
-updated: '2026-11-26T17:01:11+01:00'
+updated: '2026-11-26T17:03:19+01:00'
