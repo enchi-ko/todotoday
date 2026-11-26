@@ -32,10 +32,15 @@ expertise_domains: {}
 competency_map:
   topics:
     software-lifecycle:
-      level: explained
+      level: practiced
       last_session: '2026-11-26'
       mode: contextual
       note: LRN-001
+    scope-management:
+      level: explained
+      last_session: '2026-11-26'
+      mode: contextual
+      note: LRN-002
     git-branching:
       level: mentioned
       last_session: '2026-11-26'
