@@ -1,5 +1,5 @@
 gse_version: 0.92.1
-current_sprint: 0
+current_sprint: 1
 current_phase: LC01
 session_paused: false
 pause_checkpoint: ''
@@ -26,15 +26,7 @@ profile_drift_signals: {}
 workflow_observations: []
 last_activity: /gse:go
 last_activity_timestamp: '2026-11-26T16:08:16+01:00'
-activity_history:
-- activity: /gse:hug
-  completed_at: '2026-11-26T16:02:26+01:00'
-  sprint: 0
-  notes: User profile established (beginner, autonomous, web to-do list project)
-- activity: /gse:go
-  completed_at: '2026-11-26T16:08:16+01:00'
-  sprint: 0
-  notes: Intent captured (INT-001), backlog seeded, mode=lightweight selected
+activity_history: []
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0
