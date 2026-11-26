@@ -72,6 +72,39 @@
     storage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }
 
+  /** Serialize tasks to a pretty JSON string (for a backup file). */
+  function exportTasks(tasks) {
+    return JSON.stringify(tasks, null, 2);
+  }
+
+  /**
+   * Parse a backup file's text into a task list.
+   * Throws if the text is not valid JSON or not a list of usable tasks.
+   */
+  function importTasks(text) {
+    var data = JSON.parse(text);
+    if (!Array.isArray(data)) {
+      throw new Error("not a task list");
+    }
+    var out = [];
+    for (var i = 0; i < data.length; i++) {
+      var t = data[i];
+      if (!t || typeof t !== "object") {
+        throw new Error("invalid task");
+      }
+      var title = clean(t.title);
+      if (!title) {
+        throw new Error("task with an empty title");
+      }
+      out.push({
+        id: typeof t.id === "number" ? t.id : nextId(out),
+        title: title,
+        done: t.done === true,
+      });
+    }
+    return out;
+  }
+
   return {
     STORAGE_KEY: STORAGE_KEY,
     addTask: addTask,
@@ -81,5 +114,7 @@
     nextId: nextId,
     load: load,
     save: save,
+    exportTasks: exportTasks,
+    importTasks: importTasks,
   };
 });

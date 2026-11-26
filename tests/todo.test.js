@@ -82,3 +82,38 @@ test("load recovers from corrupt saved data (REQ-010)", () => {
   storage.setItem(Todo.STORAGE_KEY, "{not json");
   assert.deepEqual(Todo.load(storage), []);
 });
+
+test("export produces JSON containing the tasks (REQ-011)", () => {
+  const tasks = Todo.addTask([], "buy milk");
+  assert.deepEqual(JSON.parse(Todo.exportTasks(tasks)), tasks);
+});
+
+test("export of an empty list is valid JSON (REQ-011)", () => {
+  assert.equal(Todo.exportTasks([]), "[]");
+});
+
+test("import restores tasks from exported text (REQ-012)", () => {
+  let tasks = Todo.addTask([], "buy milk");
+  tasks = Todo.toggleTask(tasks, tasks[0].id);
+  assert.deepEqual(Todo.importTasks(Todo.exportTasks(tasks)), tasks);
+});
+
+test("import rejects text that is not JSON (REQ-012)", () => {
+  assert.throws(() => Todo.importTasks("{not json"));
+});
+
+test("import rejects a JSON value that is not a list (REQ-012)", () => {
+  assert.throws(() => Todo.importTasks('{"a":1}'));
+});
+
+test("import rejects a task with an empty title (REQ-012)", () => {
+  assert.throws(() => Todo.importTasks('[{"title":"   "}]'));
+});
+
+test("import normalises missing fields (REQ-012)", () => {
+  const restored = Todo.importTasks('[{"title":"buy milk"}]');
+  assert.equal(restored.length, 1);
+  assert.equal(restored[0].title, "buy milk");
+  assert.equal(restored[0].done, false);
+  assert.equal(typeof restored[0].id, "number");
+});
