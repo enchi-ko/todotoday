@@ -40,31 +40,59 @@ _Structured ambiguities auto-consumed by the **activity-entry scan** (spec P6). 
 - **OQ-001** — How should the two people share the same list if there are no accounts or logins (e.g., a single shared page/URL, a hosted web app)?
   - resolves_in: REQS
   - impact: architectural
-  - status: pending
+  - status: resolved
   - raised_at: INT-001
-  - note: "Re-tagged DESIGN → REQS: Lightweight mode skips the DESIGN activity, so the sharing decision is settled during REQS."
+  - resolved_at: "2026-11-26"
+  - resolved_in: REQS
+  - answer: "A small hosted web app — a single shared browser page backed by a server that keeps the tasks in one shared place; no logins."
+  - answered_by: user
+  - confidence: Verified
+  - traces: [DEC-001]
 
 - **OQ-002** — Where should the tasks be stored so both people see the same data (a shared server, a hosted service, etc.)?
   - resolves_in: REQS
   - impact: architectural
-  - status: pending
+  - status: resolved
   - raised_at: INT-001
-  - note: "Re-tagged DESIGN → REQS: Lightweight mode skips the DESIGN activity."
+  - resolved_at: "2026-11-26"
+  - resolved_in: REQS
+  - answer: "Server-side, in one shared place, so both users see the same data (see DEC-001)."
+  - answered_by: user
+  - confidence: Verified
+  - traces: [DEC-001]
 
 - **OQ-003** — Should both people be able to add, edit, and delete tasks, or only mark them as done?
   - resolves_in: REQS
   - impact: behavioral
-  - status: pending
+  - status: resolved
   - raised_at: INT-001
+  - resolved_at: "2026-11-26"
+  - resolved_in: REQS
+  - answer: "Both people can add, edit, delete, and mark tasks done."
+  - answered_by: agent
+  - confidence: High
+  - traces: [REQ-001, REQ-003, REQ-005]
 
 - **OQ-004** — What information does each task carry (just a short title, or also a note/description)?
   - resolves_in: REQS
   - impact: behavioral
-  - status: pending
+  - status: resolved
   - raised_at: INT-001
+  - resolved_at: "2026-11-26"
+  - resolved_in: REQS
+  - answer: "A short title only — no notes or descriptions in this first version."
+  - answered_by: agent
+  - confidence: High
+  - traces: [REQ-001]
 
 - **OQ-005** — What should happen to completed tasks (stay visible with a check, or be hidden/archived)?
   - resolves_in: REQS
   - impact: cosmetic
-  - status: pending
+  - status: resolved
   - raised_at: INT-001
+  - resolved_at: "2026-11-26"
+  - resolved_in: REQS
+  - answer: "Completed tasks stay visible in the list, shown as done (checked / struck through)."
+  - answered_by: agent
+  - confidence: High
+  - traces: [REQ-003]

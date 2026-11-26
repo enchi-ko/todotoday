@@ -1,52 +1,53 @@
-# GSE-One Sprint Plan
-# Created by /gse:plan --strategic. Maintained by orchestrator throughout sprint.
-
 version: 1
 id: PLN-001
 sprint: 1
 mode: lightweight
 status: active
-goal: "A minimal shared to-do list for two people: add tasks, mark them done, share the same list without logins, and edit/remove tasks."
-
+goal: 'A minimal shared to-do list for two people: add tasks, mark them done, share
+  the same list without logins, and edit/remove tasks.'
 tasks:
-  - id: TASK-001
-    order: 1
-    complexity: 3
-    branch: gse/sprint-01/feat/add-task
-  - id: TASK-002
-    order: 2
-    complexity: 1
-    branch: gse/sprint-01/feat/mark-done
-  - id: TASK-003
-    order: 3
-    complexity: 3
-    branch: gse/sprint-01/feat/shared-list
-  - id: TASK-004
-    order: 4
-    complexity: 1
-    branch: gse/sprint-01/feat/edit-remove
-
+- id: TASK-001
+  order: 1
+  complexity: 3
+  branch: gse/sprint-01/feat/add-task
+- id: TASK-002
+  order: 2
+  complexity: 1
+  branch: gse/sprint-01/feat/mark-done
+- id: TASK-003
+  order: 3
+  complexity: 3
+  branch: gse/sprint-01/feat/shared-list
+- id: TASK-004
+  order: 4
+  complexity: 1
+  branch: gse/sprint-01/feat/edit-remove
 budget:
   total: 10
   consumed: 0
   remaining: 10
-
 workflow:
-  expected: [plan, reqs, produce, deliver]
+  expected:
+  - plan
+  - reqs
+  - produce
+  - deliver
   completed:
-    - activity: plan
-      completed_at: "2026-11-26T16:08:55+01:00"
-      notes: "Sprint 1 planned: 4 tasks, 8/10 points, mode=lightweight"
-  active: reqs
-  pending: [produce, deliver]
+  - activity: plan
+    completed_at: '2026-11-26T16:08:55+01:00'
+    notes: 'Sprint 1 planned: 4 tasks, 8/10 points, mode=lightweight'
+  - activity: reqs
+    completed_at: '2026-11-26T16:13:51+01:00'
+    notes: 5 functional + 1 usability NFR approved; OQ-001..005 resolved; DEC-001
+      recorded
+  active: produce
+  pending:
+  - deliver
   skipped: []
-
 coherence:
-  last_evaluated: "2026-11-26T16:08:55+01:00"
+  last_evaluated: '2026-11-26T16:13:51+01:00'
   scope_changes: []
   alerts: []
-
 risks: []
-
-created: "2026-11-26T16:08:55+01:00"
-updated: "2026-11-26T16:08:55+01:00"
+created: '2026-11-26T16:08:55+01:00'
+updated: '2026-11-26T16:13:51+01:00'
