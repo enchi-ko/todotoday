@@ -1,40 +1,39 @@
-# GSE-One Sprint Plan
-# Created by /gse:plan --strategic. Maintained by orchestrator throughout sprint.
-
 version: 1
 id: PLN-004
 sprint: 4
 mode: lightweight
 status: active
-goal: "Confirm before import replaces the list, to prevent accidental data loss."
-
+goal: Confirm before import replaces the list, to prevent accidental data loss.
 tasks:
-  - id: TASK-010
-    order: 1
-    complexity: 1
-    branch: gse/sprint-04/feat/import-confirm
-
+- id: TASK-010
+  order: 1
+  complexity: 1
+  branch: gse/sprint-04/feat/import-confirm
 budget:
   total: 10
   consumed: 0
   remaining: 10
-
 workflow:
-  expected: [plan, reqs, produce, deliver]
+  expected:
+  - plan
+  - reqs
+  - produce
+  - deliver
   completed:
-    - activity: plan
-      completed_at: "2026-11-26T16:55:00+01:00"
-      notes: "Sprint 4 planned: 1 task, 1/10 points; stale hosting item (TASK-006) removed"
-  active: reqs
-  pending: [produce, deliver]
+  - activity: plan
+    completed_at: '2026-11-26T16:55:00+01:00'
+    notes: 'Sprint 4 planned: 1 task, 1/10 points; stale hosting item (TASK-006) removed'
+  - activity: reqs
+    completed_at: '2026-11-26T17:00:45+01:00'
+    notes: Sprint 4 requirement approved (REQ-014); confirm = OK/Cancel
+  active: produce
+  pending:
+  - deliver
   skipped: []
-
 coherence:
-  last_evaluated: "2026-11-26T16:55:00+01:00"
+  last_evaluated: '2026-11-26T17:00:45+01:00'
   scope_changes: []
   alerts: []
-
 risks: []
-
-created: "2026-11-26T16:55:00+01:00"
-updated: "2026-11-26T16:55:00+01:00"
+created: '2026-11-26T16:55:00+01:00'
+updated: '2026-11-26T17:00:45+01:00'

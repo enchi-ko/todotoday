@@ -83,9 +83,13 @@ workflow_observations:
   - record-only commit friction recurring x3
   severity_trend: stable
   count_raw_entries: 1
-last_activity: /gse:integrate
-last_activity_timestamp: '2026-11-26T16:55:05+01:00'
-activity_history: []
+last_activity: /gse:reqs
+last_activity_timestamp: '2026-11-26T17:00:45+01:00'
+activity_history:
+- activity: /gse:reqs
+  completed_at: '2026-11-26T17:00:45+01:00'
+  sprint: 4
+  notes: Requirement approved (REQ-014)
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0
