@@ -83,3 +83,15 @@ def test_done_state_is_shared(client):
     client.post("/toggle/1", follow_redirects=True)
     resp = other.get("/")
     assert b'class="task done"' in resp.data
+
+
+def test_two_servers_share_one_storage(tmp_path):
+    # REQ-004: sharing comes from one shared store, not from memory.
+    # Two separate app instances pointed at the same database file see the
+    # same tasks — exactly what happens when both people reach one server.
+    db = str(tmp_path / "shared.db")
+    app_a = create_app(db_path=db)
+    app_b = create_app(db_path=db)
+    app_a.test_client().post("/add", data={"title": "From A"}, follow_redirects=True)
+    resp = app_b.test_client().get("/")
+    assert b"From A" in resp.data

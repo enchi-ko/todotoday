@@ -82,4 +82,9 @@ def create_app(db_path: str | None = None) -> Flask:
 app = create_app()
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    # Bind to 0.0.0.0 so the other person can reach it on your network;
+    # override with TODOTODAY_HOST / TODOTODAY_PORT. No accounts are used —
+    # keep it on a trusted network, or host it behind a private link.
+    host = os.environ.get("TODOTODAY_HOST", "127.0.0.1")
+    port = int(os.environ.get("TODOTODAY_PORT", "5000"))
+    app.run(host=host, port=port, debug=False)
