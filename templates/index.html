@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TODOTODAY</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>TODOTODAY</h1>
+
+    <form class="add" action="{{ url_for('add') }}" method="post">
+      <input type="text" name="title" placeholder="What needs doing?"
+             autocomplete="off" autofocus aria-label="New task">
+      <button type="submit">Add</button>
+    </form>
+
+    <ul class="tasks">
+      {% for task in tasks %}
+      <li class="task{% if task['done'] %} done{% endif %}">
+        <span class="title">{{ task['title'] }}</span>
+      </li>
+      {% else %}
+      <li class="empty">No tasks yet. Add one above.</li>
+      {% endfor %}
+    </ul>
+  </main>
+</body>
+</html>
