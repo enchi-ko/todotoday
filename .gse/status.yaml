@@ -4,17 +4,17 @@ current_phase: LC01
 session_paused: false
 pause_checkpoint: ''
 health:
-  score: 0.0
+  score: 9.5
   dimensions:
-    requirements_coverage: 0
-    test_pass_rate: 0
-    design_debt: 0
-    review_findings: 0
-    complexity_budget: 0
-    traceability: 0
-    git_hygiene: 0
-    ai_integrity: 0
-  last_computed: ''
+    requirements_coverage: 10
+    test_pass_rate: 10
+    design_debt: 10
+    review_findings: 10
+    complexity_budget: 8
+    traceability: 9
+    git_hygiene: 10
+    ai_integrity: 9
+  last_computed: '2026-11-26T16:27:24+01:00'
 consecutive_acceptances: 0
 pushback_dismissed: 0
 fix_attempts_on_current_symptom: 0

@@ -2,7 +2,7 @@ version: 1
 id: PLN-001
 sprint: 1
 mode: lightweight
-status: active
+status: completed
 goal: 'A minimal shared to-do list for two people: add tasks, mark them done, share
   the same list without logins, and edit/remove tasks.'
 tasks:
@@ -57,4 +57,4 @@ coherence:
   alerts: []
 risks: []
 created: '2026-11-26T16:08:55+01:00'
-updated: '2026-11-26T16:20:26+01:00'
+updated: '2026-11-26T16:27:24+01:00'
