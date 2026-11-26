@@ -88,17 +88,17 @@ items:
     - DEC-002
   acceptance_criteria: Opening the page lets you add, complete, edit and remove tasks,
     and the list is still there after closing and reopening the page.
-  status: reviewed
+  status: delivered
   requires_review: true
-  delivered_at: null
+  delivered_at: '2026-11-26T16:46:59+01:00'
   completed_at: '2026-11-26T16:41:32+01:00'
   origin: user
   origin_ref: DEC-002
   git:
     branch: gse/sprint-02/feat/browser-app
-    branch_status: active
+    branch_status: deleted
     worktree: null
-    worktree_status: null
+    worktree_status: removed
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
@@ -110,4 +110,4 @@ items:
     code_coverage: null
     summary: 10/10 tests passed (TCP-002)
   created: '2026-11-26T16:38:04+01:00'
-  updated: '2026-11-26T16:41:32+01:00'
+  updated: '2026-11-26T16:46:59+01:00'
