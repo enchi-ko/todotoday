@@ -50,17 +50,17 @@ items:
     - docs/sprints/sprint-02/compound.md
   acceptance_criteria: I can export my list to a file and import it back, restoring
     the same tasks and done-state.
-  status: reviewed
+  status: delivered
   requires_review: true
-  delivered_at: null
+  delivered_at: '2026-11-26T16:51:28+01:00'
   completed_at: '2026-11-26T16:51:01+01:00'
   origin: ad-hoc
   origin_ref: docs/sprints/sprint-02/compound.md
   git:
     branch: gse/sprint-03/feat/backup
-    branch_status: active
+    branch_status: deleted
     worktree: null
-    worktree_status: null
+    worktree_status: removed
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
@@ -72,7 +72,7 @@ items:
     code_coverage: null
     summary: 17/17 tests passed (TCP-003)
   created: '2026-11-26T16:48:13+01:00'
-  updated: '2026-11-26T16:51:01+01:00'
+  updated: '2026-11-26T16:51:28+01:00'
 - id: TASK-009
   title: Show a small confirmation when an edit is saved
   description: A brief visual hint after editing a task title, so it is clear the
@@ -86,17 +86,17 @@ items:
     derives_from:
     - docs/sprints/sprint-02/compound.md
   acceptance_criteria: After editing a task title, a brief "saved" hint appears.
-  status: reviewed
+  status: delivered
   requires_review: true
-  delivered_at: null
+  delivered_at: '2026-11-26T16:51:28+01:00'
   completed_at: '2026-11-26T16:51:01+01:00'
   origin: ad-hoc
   origin_ref: docs/sprints/sprint-02/compound.md
   git:
     branch: gse/sprint-03/feat/save-hint
-    branch_status: active
+    branch_status: deleted
     worktree: null
-    worktree_status: null
+    worktree_status: removed
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
@@ -108,4 +108,4 @@ items:
     code_coverage: null
     summary: 17/17 tests passed (TCP-003)
   created: '2026-11-26T16:48:13+01:00'
-  updated: '2026-11-26T16:51:01+01:00'
+  updated: '2026-11-26T16:51:28+01:00'

@@ -2,7 +2,7 @@ version: 1
 id: PLN-003
 sprint: 3
 mode: lightweight
-status: active
+status: completed
 goal: Add export/import so the user can back up their list, and a small save confirmation
   when editing a task.
 tasks:
@@ -44,4 +44,4 @@ coherence:
   alerts: []
 risks: []
 created: '2026-11-26T16:45:00+01:00'
-updated: '2026-11-26T16:50:19+01:00'
+updated: '2026-11-26T16:51:28+01:00'
