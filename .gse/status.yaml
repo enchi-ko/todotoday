@@ -71,9 +71,20 @@ workflow_observations:
   severity: info
   timestamp: '2026-11-26T16:51:28+01:00'
   sprint: 3
-  summarized: false
-last_activity: /gse:deliver
-last_activity_timestamp: '2026-11-26T16:51:28+01:00'
+  summarized: true
+- axis: quality_trends
+  sprint: 3
+  summarized: true
+  timestamp: '2026-11-26T16:52:18+01:00'
+  summary_text: Three sprints, three green deliveries; suite grew 10 -> 17 with no
+    regressions.
+  key_observations:
+  - regression safety positive
+  - record-only commit friction recurring x3
+  severity_trend: stable
+  count_raw_entries: 1
+last_activity: /gse:compound
+last_activity_timestamp: '2026-11-26T16:52:18+01:00'
 activity_history:
 - activity: /gse:reqs
   completed_at: '2026-11-26T16:49:35+01:00'
@@ -88,6 +99,10 @@ activity_history:
   sprint: 3
   notes: Merged to main, tagged v0.3.0, branches cleaned, release notes + plan snapshot
     written
+- activity: /gse:compound
+  completed_at: '2026-11-26T16:52:18+01:00'
+  sprint: 3
+  notes: 3 axes; 3 observations (3 themes); LRN-003; TASK-008/009 archived
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0

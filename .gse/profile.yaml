@@ -42,13 +42,18 @@ competency_map:
       last_session: '2026-11-26'
       mode: contextual
       note: LRN-002
+    data-safety:
+      level: explained
+      last_session: '2026-11-26'
+      mode: contextual
+      note: LRN-003
     git-branching:
       level: mentioned
       last_session: '2026-11-26'
       mode: contextual
       note: LRN-001
     testing:
-      level: mentioned
+      level: explained
       last_session: '2026-11-26'
       mode: contextual
       note: LRN-001
