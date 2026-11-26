@@ -48,8 +48,13 @@ workflow:
   skipped: []
 coherence:
   last_evaluated: '2026-11-26T16:17:17+01:00'
-  scope_changes: []
+  scope_changes:
+  - timestamp: '2026-11-26T16:20:26+01:00'
+    trigger: produce
+    description: 'Four planned per-goal feature branches consolidated into one (gse/sprint-01/feat/add-task);
+      one commit per TASK. Reason: one small cohesive app.'
+    budget_impact: 0 pts
   alerts: []
 risks: []
 created: '2026-11-26T16:08:55+01:00'
-updated: '2026-11-26T16:17:17+01:00'
+updated: '2026-11-26T16:20:26+01:00'
