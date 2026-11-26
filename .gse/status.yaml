@@ -43,8 +43,8 @@ workflow_observations:
   - sprint_close velocity note
   severity_trend: stable
   count_raw_entries: 1
-last_activity: /gse:compound
-last_activity_timestamp: '2026-11-26T16:31:01+01:00'
+last_activity: /gse:integrate
+last_activity_timestamp: '2026-11-26T16:31:42+01:00'
 activity_history:
 - activity: /gse:reqs
   completed_at: '2026-11-26T16:13:51+01:00'
@@ -64,6 +64,11 @@ activity_history:
   sprint: 1
   notes: 3 axes capitalized; 4 methodology observations (3 themes); LRN-001; backlog
     archived
+- activity: /gse:integrate
+  completed_at: '2026-11-26T16:31:42+01:00'
+  sprint: 1
+  notes: 'Axe 1: 2 debt tasks added to pool (TASK-005, TASK-006). Axe 2: skipped (github
+    disabled). Axe 3: learning goal added.'
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0

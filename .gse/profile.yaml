@@ -19,6 +19,7 @@ dimensions:
   team_context: solo
   learning_goals:
   - How software projects are built
+  - How the parts of a web app fit together (page, server, database)
   contextual_tips: true
   emoji: true
 inferred:
