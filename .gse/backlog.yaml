@@ -88,10 +88,10 @@ items:
     - DEC-002
   acceptance_criteria: Opening the page lets you add, complete, edit and remove tasks,
     and the list is still there after closing and reopening the page.
-  status: review
+  status: reviewed
   requires_review: true
   delivered_at: null
-  completed_at: null
+  completed_at: '2026-11-26T16:41:32+01:00'
   origin: user
   origin_ref: DEC-002
   git:
@@ -110,4 +110,4 @@ items:
     code_coverage: null
     summary: 10/10 tests passed (TCP-002)
   created: '2026-11-26T16:38:04+01:00'
-  updated: '2026-11-26T16:41:15+01:00'
+  updated: '2026-11-26T16:41:32+01:00'
