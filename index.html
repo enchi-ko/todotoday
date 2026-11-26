@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TODOTODAY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>TODOTODAY</h1>
+
+    <form id="add-form" class="add">
+      <input id="new-title" type="text" placeholder="What needs doing?"
+             autocomplete="off" autofocus aria-label="New task">
+      <button type="submit">Add</button>
+    </form>
+
+    <ul id="tasks" class="tasks"></ul>
+    <p id="empty" class="empty">No tasks yet. Add one above.</p>
+  </main>
+
+  <!-- Task logic (pure, also tested in Node) -->
+  <script src="todo.js"></script>
+
+  <!-- Page glue: render + save to the browser -->
+  <script>
+    (function () {
+      "use strict";
+      var storage = window.localStorage;
+      var tasks = Todo.load(storage);
+
+      var listEl = document.getElementById("tasks");
+      var emptyEl = document.getElementById("empty");
+      var form = document.getElementById("add-form");
+      var input = document.getElementById("new-title");
+
+      function persist() {
+        Todo.save(storage, tasks);
+        render();
+      }
+
+      function render() {
+        listEl.innerHTML = "";
+        tasks.forEach(function (task) {
+          var li = document.createElement("li");
+          li.className = "task" + (task.done ? " done" : "");
+
+          var toggle = document.createElement("button");
+          toggle.type = "button";
+          toggle.className = "check";
+          toggle.textContent = task.done ? "\u2713" : "\u25cb";
+          toggle.setAttribute("aria-pressed", String(task.done));
+          toggle.setAttribute("aria-label", task.done ? "Mark as not done" : "Mark as done");
+          toggle.addEventListener("click", function () {
+            tasks = Todo.toggleTask(tasks, task.id);
+            persist();
+          });
+
+          var title = document.createElement("input");
+          title.type = "text";
+          title.className = "title-input";
+          title.value = task.title;
+          title.setAttribute("aria-label", "Task title");
+          title.addEventListener("change", function () {
+            tasks = Todo.editTask(tasks, task.id, title.value);
+            persist();
+          });
+
+          var remove = document.createElement("button");
+          remove.type = "button";
+          remove.className = "remove";
+          remove.textContent = "\u2715";
+          remove.setAttribute("aria-label", "Delete task");
+          remove.addEventListener("click", function () {
+            tasks = Todo.deleteTask(tasks, task.id);
+            persist();
+          });
+
+          li.appendChild(toggle);
+          li.appendChild(title);
+          li.appendChild(remove);
+          listEl.appendChild(li);
+        });
+        emptyEl.style.display = tasks.length ? "none" : "block";
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        tasks = Todo.addTask(tasks, input.value);
+        input.value = "";
+        persist();
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>

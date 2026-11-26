@@ -73,6 +73,8 @@ h1 {
   overflow: hidden;
 }
 
+.tasks:empty { display: none; }
+
 .task {
   display: flex;
   align-items: center;
@@ -83,9 +85,8 @@ h1 {
 
 .task:last-child { border-bottom: none; }
 
-.toggle { display: flex; margin: 0; }
-
 .check {
+  flex: none;
   width: 1.6rem;
   height: 1.6rem;
   font-size: 1rem;
@@ -103,15 +104,7 @@ h1 {
   color: #fff;
 }
 
-.edit {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0;
-}
-
-.edit input {
+.title-input {
   flex: 1;
   min-width: 0;
   padding: 0.25rem 0.35rem;
@@ -122,30 +115,20 @@ h1 {
   color: inherit;
 }
 
-.edit input:hover { border-color: var(--border); }
+.title-input:hover { border-color: var(--border); }
 
-.edit input:focus {
+.title-input:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
-  border-color: transparent;
 }
 
-.save {
-  display: none;
-  padding: 0.3rem 0.6rem;
-  font-size: 0.8rem;
-  border: none;
-  border-radius: 0.4rem;
-  background: var(--accent);
-  color: #fff;
-  cursor: pointer;
+.task.done .title-input {
+  text-decoration: line-through;
+  color: var(--done);
 }
-
-.edit:focus-within .save { display: inline-block; }
-
-.delete { display: flex; margin: 0; }
 
 .remove {
+  flex: none;
   width: 1.6rem;
   height: 1.6rem;
   font-size: 0.9rem;
@@ -159,13 +142,10 @@ h1 {
 
 .remove:hover { background: #fde8e8; color: #c0392b; }
 
-.task.done .edit input {
-  text-decoration: line-through;
-  color: var(--done);
-}
-
 .empty {
+  margin: 1rem 0 0;
   padding: 1rem;
   color: var(--muted);
   font-style: italic;
+  text-align: center;
 }

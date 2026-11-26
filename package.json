@@ -1,0 +1,9 @@
+{
+  "name": "todotoday",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A personal, browser-only to-do list. No server, no install — just open index.html.",
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}
