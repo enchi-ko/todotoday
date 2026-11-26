@@ -63,13 +63,17 @@ workflow_observations:
   - record-only commit guardrail recurring
   severity_trend: stable
   count_raw_entries: 1
-last_activity: /gse:reqs
-last_activity_timestamp: '2026-11-26T16:49:35+01:00'
+last_activity: /gse:produce
+last_activity_timestamp: '2026-11-26T16:50:19+01:00'
 activity_history:
 - activity: /gse:reqs
   completed_at: '2026-11-26T16:49:35+01:00'
   sprint: 3
   notes: Requirements approved (REQ-011..013)
+- activity: /gse:produce
+  completed_at: '2026-11-26T16:50:19+01:00'
+  sprint: 3
+  notes: Produced TASK-008 + TASK-009; TCP-003 17/17 pass
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0

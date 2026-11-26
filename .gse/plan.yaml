@@ -16,8 +16,8 @@ tasks:
   branch: gse/sprint-03/feat/save-hint
 budget:
   total: 10
-  consumed: 0
-  remaining: 10
+  consumed: 3
+  remaining: 7
 workflow:
   expected:
   - plan
@@ -32,14 +32,16 @@ workflow:
   - activity: reqs
     completed_at: '2026-11-26T16:49:35+01:00'
     notes: Sprint 3 requirements approved (REQ-011..013); import = replace
-  active: produce
-  pending:
-  - deliver
+  - activity: produce
+    completed_at: '2026-11-26T16:50:19+01:00'
+    notes: TASK-008 (export/import) + TASK-009 (save hint); TCP-003 17/17 pass
+  active: deliver
+  pending: []
   skipped: []
 coherence:
-  last_evaluated: '2026-11-26T16:49:35+01:00'
+  last_evaluated: '2026-11-26T16:50:19+01:00'
   scope_changes: []
   alerts: []
 risks: []
 created: '2026-11-26T16:45:00+01:00'
-updated: '2026-11-26T16:49:35+01:00'
+updated: '2026-11-26T16:50:19+01:00'

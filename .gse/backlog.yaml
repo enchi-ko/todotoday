@@ -50,7 +50,7 @@ items:
     - docs/sprints/sprint-02/compound.md
   acceptance_criteria: I can export my list to a file and import it back, restoring
     the same tasks and done-state.
-  status: planned
+  status: review
   requires_review: true
   delivered_at: null
   completed_at: null
@@ -58,21 +58,21 @@ items:
   origin_ref: docs/sprints/sprint-02/compound.md
   git:
     branch: gse/sprint-03/feat/backup
-    branch_status: planned
+    branch_status: active
     worktree: null
     worktree_status: null
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
   test_evidence:
-    status: absent
-    campaign_ref: null
-    timestamp: null
-    pass_rate: null
+    status: pass
+    campaign_ref: docs/sprints/sprint-03/test-reports/campaign-003.md
+    timestamp: '2026-11-26T16:50:19+01:00'
+    pass_rate: 100
     code_coverage: null
-    summary: null
+    summary: 17/17 tests passed (TCP-003)
   created: '2026-11-26T16:48:13+01:00'
-  updated: '2026-11-26T16:49:02+01:00'
+  updated: '2026-11-26T16:50:19+01:00'
 - id: TASK-009
   title: Show a small confirmation when an edit is saved
   description: A brief visual hint after editing a task title, so it is clear the
@@ -86,7 +86,7 @@ items:
     derives_from:
     - docs/sprints/sprint-02/compound.md
   acceptance_criteria: After editing a task title, a brief "saved" hint appears.
-  status: planned
+  status: review
   requires_review: true
   delivered_at: null
   completed_at: null
@@ -94,18 +94,18 @@ items:
   origin_ref: docs/sprints/sprint-02/compound.md
   git:
     branch: gse/sprint-03/feat/save-hint
-    branch_status: planned
+    branch_status: active
     worktree: null
     worktree_status: null
     last_commit: null
     uncommitted_changes: 0
   github_issue: null
   test_evidence:
-    status: absent
-    campaign_ref: null
-    timestamp: null
-    pass_rate: null
+    status: pass
+    campaign_ref: docs/sprints/sprint-03/test-reports/campaign-003.md
+    timestamp: '2026-11-26T16:50:19+01:00'
+    pass_rate: 100
     code_coverage: null
-    summary: null
+    summary: 17/17 tests passed (TCP-003)
   created: '2026-11-26T16:48:13+01:00'
-  updated: '2026-11-26T16:49:02+01:00'
+  updated: '2026-11-26T16:50:19+01:00'
