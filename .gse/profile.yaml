@@ -20,6 +20,7 @@ dimensions:
   learning_goals:
   - How software projects are built
   - How the parts of a web app fit together (page, server, database)
+  - Backing up your data (why a browser-only list can be lost)
   contextual_tips: true
   emoji: true
 inferred:

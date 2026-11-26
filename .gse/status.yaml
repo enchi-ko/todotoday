@@ -63,8 +63,8 @@ workflow_observations:
   - record-only commit guardrail recurring
   severity_trend: stable
   count_raw_entries: 1
-last_activity: /gse:compound
-last_activity_timestamp: '2026-11-26T16:47:50+01:00'
+last_activity: /gse:integrate
+last_activity_timestamp: '2026-11-26T16:48:13+01:00'
 activity_history:
 - activity: /gse:reqs
   completed_at: '2026-11-26T16:40:03+01:00'
@@ -84,6 +84,11 @@ activity_history:
   completed_at: '2026-11-26T16:47:50+01:00'
   sprint: 2
   notes: 3 axes; 3 observations (3 themes); LRN-002; TASK-007 archived
+- activity: /gse:integrate
+  completed_at: '2026-11-26T16:48:13+01:00'
+  sprint: 2
+  notes: 'Axe 1: 2 pool tasks (TASK-008 export/backup, TASK-009 save hint). Axe 2:
+    skipped (github disabled). Axe 3: learning goal added.'
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0
