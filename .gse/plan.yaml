@@ -1,47 +1,40 @@
+# GSE-One Sprint Plan
+# Created by /gse:plan --strategic. Maintained by orchestrator throughout sprint.
+
 version: 1
-id: PLN-003
-sprint: 3
+id: PLN-004
+sprint: 4
 mode: lightweight
-status: completed
-goal: Add export/import so the user can back up their list, and a small save confirmation
-  when editing a task.
+status: active
+goal: "Confirm before import replaces the list, to prevent accidental data loss."
+
 tasks:
-- id: TASK-008
-  order: 1
-  complexity: 2
-  branch: gse/sprint-03/feat/backup
-- id: TASK-009
-  order: 2
-  complexity: 1
-  branch: gse/sprint-03/feat/save-hint
+  - id: TASK-010
+    order: 1
+    complexity: 1
+    branch: gse/sprint-04/feat/import-confirm
+
 budget:
   total: 10
-  consumed: 3
-  remaining: 7
+  consumed: 0
+  remaining: 10
+
 workflow:
-  expected:
-  - plan
-  - reqs
-  - produce
-  - deliver
+  expected: [plan, reqs, produce, deliver]
   completed:
-  - activity: plan
-    completed_at: '2026-11-26T16:45:00+01:00'
-    notes: 'Sprint 3 planned: 2 tasks, 3/10 points; previous sprint velocity 3/3 (100%);
-      obsolete TASK-005 removed'
-  - activity: reqs
-    completed_at: '2026-11-26T16:49:35+01:00'
-    notes: Sprint 3 requirements approved (REQ-011..013); import = replace
-  - activity: produce
-    completed_at: '2026-11-26T16:50:19+01:00'
-    notes: TASK-008 (export/import) + TASK-009 (save hint); TCP-003 17/17 pass
-  active: deliver
-  pending: []
+    - activity: plan
+      completed_at: "2026-11-26T16:55:00+01:00"
+      notes: "Sprint 4 planned: 1 task, 1/10 points; stale hosting item (TASK-006) removed"
+  active: reqs
+  pending: [produce, deliver]
   skipped: []
+
 coherence:
-  last_evaluated: '2026-11-26T16:50:19+01:00'
+  last_evaluated: "2026-11-26T16:55:00+01:00"
   scope_changes: []
   alerts: []
+
 risks: []
-created: '2026-11-26T16:45:00+01:00'
-updated: '2026-11-26T16:51:28+01:00'
+
+created: "2026-11-26T16:55:00+01:00"
+updated: "2026-11-26T16:55:00+01:00"

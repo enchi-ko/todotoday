@@ -1,47 +1,10 @@
 items:
-- id: TASK-006
-  title: Host the shared list online so both people can reach it
-  description: Deploy the app so the two users can reach it without being on the same
-    local network.
-  artefact_type: code
-  sprint: null
-  priority: should
-  complexity: 3
-  traces:
-    implements: []
-    derives_from:
-    - docs/sprints/sprint-01/compound.md
-  acceptance_criteria: Both users can open the list from their own devices over the
-    internet.
-  status: open
-  requires_review: true
-  delivered_at: null
-  completed_at: null
-  origin: ad-hoc
-  origin_ref: docs/sprints/sprint-01/compound.md
-  git:
-    branch: null
-    branch_status: null
-    worktree: null
-    worktree_status: null
-    last_commit: null
-    uncommitted_changes: 0
-  github_issue: null
-  test_evidence:
-    status: absent
-    campaign_ref: null
-    timestamp: null
-    pass_rate: null
-    code_coverage: null
-    summary: null
-  created: '2026-11-26T16:31:40+01:00'
-  updated: '2026-11-26T16:38:04+01:00'
 - id: TASK-010
   title: Confirm before import replaces the list
   description: Ask the user to confirm before an import overwrites the current list,
     to avoid an accidental data loss.
   artefact_type: code
-  sprint: null
+  sprint: 4
   priority: could
   complexity: 1
   traces:
@@ -50,15 +13,15 @@ items:
     - docs/sprints/sprint-03/compound.md
   acceptance_criteria: Importing a backup asks for confirmation before replacing the
     current list.
-  status: open
+  status: planned
   requires_review: true
   delivered_at: null
   completed_at: null
   origin: ad-hoc
   origin_ref: docs/sprints/sprint-03/compound.md
   git:
-    branch: null
-    branch_status: null
+    branch: gse/sprint-04/feat/import-confirm
+    branch_status: planned
     worktree: null
     worktree_status: null
     last_commit: null
@@ -72,4 +35,4 @@ items:
     code_coverage: null
     summary: null
   created: '2026-11-26T16:55:05+01:00'
-  updated: '2026-11-26T16:55:05+01:00'
+  updated: '2026-11-26T16:59:53+01:00'
