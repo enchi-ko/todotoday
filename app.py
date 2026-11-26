@@ -69,6 +69,13 @@ def create_app(db_path: str | None = None) -> Flask:
             db.commit()
         return redirect(url_for("index"))
 
+    @app.route("/toggle/<int:task_id>", methods=["POST"])
+    def toggle(task_id: int):
+        db = get_db()
+        db.execute("UPDATE tasks SET done = 1 - done WHERE id = ?", (task_id,))
+        db.commit()
+        return redirect(url_for("index"))
+
     return app
 
 

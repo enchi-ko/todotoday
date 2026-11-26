@@ -57,3 +57,29 @@ def test_tasks_are_shared_across_sessions(client):
     client.post("/add", data={"title": "Shared task"}, follow_redirects=True)
     resp = other.get("/")
     assert b"Shared task" in resp.data
+
+
+def test_mark_task_done(client):
+    # REQ-003 criterion 1: marking a task done shows it as done.
+    client.post("/add", data={"title": "Walk dog"}, follow_redirects=True)
+    client.post("/toggle/1", follow_redirects=True)
+    resp = client.get("/")
+    assert b'class="task done"' in resp.data
+
+
+def test_unmark_task_done(client):
+    # REQ-003 criterion 2: marking a done task again shows it as not done.
+    client.post("/add", data={"title": "Walk dog"}, follow_redirects=True)
+    client.post("/toggle/1", follow_redirects=True)  # -> done
+    client.post("/toggle/1", follow_redirects=True)  # -> not done
+    resp = client.get("/")
+    assert b'class="task done"' not in resp.data
+
+
+def test_done_state_is_shared(client):
+    # REQ-002/REQ-004: the done state is shared too, not per-browser.
+    other = client.application.test_client()
+    client.post("/add", data={"title": "Walk dog"}, follow_redirects=True)
+    client.post("/toggle/1", follow_redirects=True)
+    resp = other.get("/")
+    assert b'class="task done"' in resp.data

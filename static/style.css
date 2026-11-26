@@ -74,11 +74,34 @@ h1 {
 }
 
 .task {
-  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
   border-bottom: 1px solid var(--border);
 }
 
 .task:last-child { border-bottom: none; }
+
+.toggle { display: flex; margin: 0; }
+
+.check {
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 1rem;
+  line-height: 1;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.task.done .check {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
 
 .task.done .title {
   text-decoration: line-through;
