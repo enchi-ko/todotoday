@@ -9,7 +9,7 @@ project:
 
 # --- Section 2: Lifecycle ---
 lifecycle:
-  mode: ""                             # full | lightweight | micro  (set by /gse:go after complexity assessment — see spec §13.2)
+  mode: lightweight                    # full | lightweight | micro  (set by /gse:go after complexity assessment — see spec §13.2)
   stale_sprint_sessions: 3              # sessions without progress before stale detection (/gse:go)
   phases:
     LC02:
@@ -64,7 +64,7 @@ hooks:
 
 # --- Section 9: Git ---
 git:
-  strategy: worktree                   # worktree | branch-only | none
+  strategy: branch-only                # worktree | branch-only | none  (Lightweight mode)
   worktree_dir: .worktrees             # relative to project root
   branch_prefix: gse                   # prefix for all GSE-One branches
   merge_strategy_default: squash       # squash | merge | rebase (default proposal for Gate)
