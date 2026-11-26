@@ -4,7 +4,7 @@
 
 # --- Section 1: Project ---
 project:
-  name: ""
+  name: "TODOTODAY"
   domain: "web"                        # web | api | cli | data | mobile | embedded | library | scientific | other  (aligned with profile.yaml dimensions.project_domain)
 
 # --- Section 2: Lifecycle ---
