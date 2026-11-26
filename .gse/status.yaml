@@ -43,9 +43,13 @@ workflow_observations:
   - sprint_close velocity note
   severity_trend: stable
   count_raw_entries: 1
-last_activity: /gse:integrate
-last_activity_timestamp: '2026-11-26T16:31:42+01:00'
-activity_history: []
+last_activity: /gse:reqs
+last_activity_timestamp: '2026-11-26T16:40:03+01:00'
+activity_history:
+- activity: /gse:reqs
+  completed_at: '2026-11-26T16:40:03+01:00'
+  sprint: 2
+  notes: Requirements approved (REQ-006..010, REQ-102)
 sessions_without_progress: 0
 task_status_snapshot: {}
 review_findings_open: 0
